@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta-name viewport="width=device-width, initial-scale=1.0">
+        <title>Project – Iron Skies</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div style="padding:40px; max-width:900px; margin:auto;">
+        <a href="index.html" style="color:#00d1ff;">
+            < Go Back</a>
+  <h1  style="color:#00d1ff;">Iron Skies</h1>
+                <hr>
+
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <div style="text-align:center; margin: 30px 0;">
+                        <video width="1200" height="630" autoplay muted loop playsinline controls
+                            style="border-radius:12px; max-width:100%;">
+                            <source src="assets/images/Games/Iron Skies/Video zonder titel (4).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <!-- Panels: About + Project Info -->
+                <div style="
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin-top: 30px;
+">
+
+                    <!-- About Panel -->
+                    <div class="info-panels">
+
+                        <div class="largePanel">
+                            <h2 style="color:#00d1ff;">About</h2>
+                            <p>
+                                Dimension Dash is een snelle 2D platformer waarin je door unieke
+                                dimensies reist en obstakels overwint met dash-moves en portals.
+                            </p>
+                        </div>
+
+                        <div class="largePanel">
+                        <h2 style="color:#00d1ff;">Project Info</h2>                            <p>
+                                <img src="assets/images/Symbols/tools.svg" alt="Time" class="meta-icon"> Engine:
+                                Unity<br>
+                                <img src="assets/images/Symbols/upload-svgrepo-com.svg" alt="Time" class="meta-icon"> Target Platform: PC / WEBGL<br>
+                                <img src="assets/images/Symbols/clock.svg" alt="Time" class="meta-icon"> Development
+                                time: 4
+                                weeks<br>
+                                <img src="assets/images/Symbols/team.svg" alt="Time" class="meta-icon"> Team size: 1
+                                developer,
+                                6 artists
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Introductie -->
+                    <div class ="full-width">
+                        <h2 style="color:#00d1ff;">Introduction.</h2>
+                        <p>
+                            Iron Skies is a single player 3D sidescrolling shoot em up. 
+                            <br>Control the players height and rotate to accurately aim at enemies.
+                            <br> Collect scraps that drop from defeated enemies to upgrade your vessel in between waves.
+                            <br> Increasing the score drops powerups with boost like Damage up, Health up, Scrap up and FireRate up.
+                        </p>
+                        <hr>
+                    </div>
+
+                    <!-- Gameplay uitleg -->
+                    <div class="gif">
+
+                        <h2 style="color:#00d1ff;">Gameplay</h2>
+                        <p>
+                            The player controls a ship that has to fight its way through multiple rounds of enemies.
+                            <br>
+                            Shoot bullets with space and drop bombs with L shift.
+                            <br>
+                            <br>
+                            The enemy types include :
+                            <br> helicopters, hot air balloons, zeppelins, small and bigger boats.
+                            
+                            <br>
+                            Enemies drop scrap that can be used in the shop at the start of every wave.
+                            <br>
+                            Upgrade health, speed or add a second barrel to make the waves easier.
+                            <br> 
+                            <br> The wave bar in the top-right corner shows when the final boss will appear.
+                            After the final round a boss appears with more health.
+
+                        </p>
+                    </div>
+                    <!-- Gameplay GIF -->
+
+                    <div class="gif">
+                        <img src="assets/images/Games/Iron Skies/GIF.gif" alt="Gameplay GIF"
+                            style="width:100%; max-width:600px; border-radius:12px; margin-bottom:25px;">
+                    </div>
+                </div>
+                <!-- Gameplay image list -->
+                <div class="image-slider">
+                    <button class="prev">&lt;</button>
+
+                    <img src="assets/images/Games/Iron Skies/IronSkiesTumbnail.png" alt="Screenshot" class="slider-image">
+
+                    <button class="next">&gt;</button>
+                    <script>
+                        const images = [
+                            "assets/images/Games/Iron Skies/Upgrades.png",
+                            "assets/images/Games/Iron Skies/Title.png",
+                            "assets/images/Games/Iron Skies/Boss.png",
+                            "assets/images/Games/Iron Skies/Credits.png",
+                        ];
+
+                        let currentIndex = 0;
+
+                        const sliderImage = document.querySelector(".slider-image");
+                        const prevBtn = document.querySelector(".prev");
+                        const nextBtn = document.querySelector(".next");
+
+                        prevBtn.addEventListener("click", () => {
+                            currentIndex = (currentIndex - 1 + images.length) % images.length;
+                            sliderImage.src = images[currentIndex];
+                        });
+
+                        nextBtn.addEventListener("click", () => {
+                            currentIndex = (currentIndex + 1) % images.length;
+                            sliderImage.src = images[currentIndex];
+                        });
+                    </script>
+
+                </div>
+                <!-- Systems -->
+                <!-- Two-column layout: text left, images right -->
+                <div class="two-column">
+
+                    <!-- Left column: stacked panels -->
+                    <div class="text-column">
+                        <div class="largePanel">
+                            <h2 style="color:#00d1ff;">Systems I worked on.</h2>
+                            <ul>
+                                <li><strong>Player Movement System</strong> –Simple up and down movement.</li>
+                               <br>  <li><strong>Shop System</strong> – Upgrade Health, barrels and movement speed.</li>
+                               <br>  <li><strong>Powerup items</strong> – all different powerup types.</li>
+                               <br>  <li><strong>Enemy movement</strong> – Dynamic movement class used for all enemy types. </li>
+                               <br>  <li><strong>Enemy attack patterns</strong> – Different attack types per enemy. </li>
+                               <br>  <li><strong>Parallax effect</strong> – Moves background elements at different speeds. </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="largePanel">
+                            <h2 style="color:#00d1ff;">What I've learned.</h2>
+                            <p>
+                                During the production I had a lot of fun making the movement mechanics for the player and making the different enemy types.
+                               <br> <br> This was the first group project I worked on and it learned a lot about working in a Scrum team.
+                                <br> Pitching, sprints, standups and sprint reviews were all new to me and helped me to better reflect on my work.
+                               <br> <br> This project was also the first time we did multiple playtest, which teached me a lot about dealing with feedback and making the game easy to read for new players.
+                               <br> <br> In the end I was really proud with the work I was able to do in such a short project.
+                                
+                                <br>
+
+                                <br>
+                                ----<a href="https://neennick02.itch.io/iron-skies" style="color:#00d1ff;"target="_blank">Play it
+                                    here</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right column: images/screenshots -->
+                    <div class="image-column">
+
+
+                        <img src="assets/images/Games/Iron Skies/Upgrades.png" alt=""class="lightbox-trigger">
+                        <img src="assets/images/Games/Iron Skies/Title.png" alt=""class="lightbox-trigger">
+                        <img src="assets/images/Games/Iron Skies/Boss.png" alt=""class="lightbox-trigger">
+                        <img src="assets/images/Games/Iron Skies/Credits.png" alt=""class="lightbox-trigger">
+
+
+
+                    </div>
+
+                    <!-- Fullscreen overlay (one for all images) -->
+                    <div id="lightbox-overlay" onclick="closeLightbox()">
+                        <img id="lightbox-image" src="" alt="">
+                    </div>
+
+                </div>
+                <br>
+                <br><br>
+                <a href="index.html" style="color:#00d1ff;">
+                    < Go Back</a>
+    </div>
+    <script>
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+        const overlay = document.getElementById('lightbox-overlay');
+        const lightboxImage = document.getElementById('lightbox-image');
+
+        lightboxTriggers.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImage.src = img.src;  // load clicked image
+                overlay.style.display = 'flex'; // show fullscreen
+            });
+        });
+
+        function closeLightbox() {
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

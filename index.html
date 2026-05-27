@@ -1,15 +1,302 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="nl">
 
 <head>
-   <title>Simple Game Development infoPage.</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Game Dev Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div id="page-container">
+        <header>
+            <h1 class="text-4xl font-bold text-blue-400">Yannick Garbe</h1>
+            <p><strong>Junior Game developer</strong></p>
+            <br>
+            <nav>
+                <a href="#about">About me</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#educations">Educations</a>
+                <a href="#contact">Contact</a>
 
+            </nav>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2 class="text-2xl font-bold text-blue-400">About Me</h2>
+                <hr>
+                <br>
+                <!-- Korte bio -->
+                <p>I’m 23 years old and a passionate game developer with about one year of experience in Unity.</p>
+                <p> Outside of game development, I enjoy playing guitar, drawing, and playing games, which inspire me when working on new projects.</p>
+                <p> I focus on gameplay programming, game design, map design and creating interactive experiences that are both fun and engaging.
+                </p>
+            </section>
+
+                <section id="projects">
+                    <h2 class="text-2xl font-bold text-blue-400">Projects</h2>
+                    <hr>
+                
+                    <div class="project-grid" id="projectGrid"></div>
+                </section>
+
+  <section id="skills">
+                <h2 class="text-2xl font-bold text-blue-400">Skills & Other</h2>
+                <hr>
+                <br>
+                <!-- Skills -->
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Programming languages:</strong>
+                    <span>C#, JavaScript</span>
+                </p>
+                
+                <br>
+                
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Engines and frameworks:</strong>
+                    <span>Unity</span>
+                </p>
+                
+                <br>
+                
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Platforms:</strong>
+                    <span>PC, WEBGL, Android</span>
+                </p>
+                
+                <br>
+                
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Tools:</strong>
+                    <span>Visual Studio, Blender</span>
+                </p>
+                
+                
+                <br>
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Source control:</strong>
+                    <span>GitHub</span>
+                </p>
+                
+                <br>
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Languages:</strong>
+                    <span>Dutch (native), English (fluent)</span>
+                </p>
+                
+                
+                <br>
+                <p style="margin-left: 50px; display: flex; align-items: center;">
+                    <strong style="width: 420px;">Interest and hobbies:</strong>
+                    <span>Games, Programming, Music, Skateboarding</span>
+                </p>
+                </p>
+                </section>
+
+            <section id="educations">
+                <h2 class="text-2xl font-bold text-blue-400">Educations</h2>
+                <hr>
+                <!-- lijst met opleidingen -->
+                <br><p>-Creative Software Development on Grafisch Lyceum Utrecht (2024- 20xx)</p>
+
+            </section>
+            <section id="contact">
+                <h2 class="text-2xl font-bold text-blue-400">Contact</h2>
+                <hr>
+
+                <div class="socials">
+                    <a href="https://neennick02.itch.io/" target="_blank">
+                        <img src="assets/images/Logos/itch-io-seeklogo.png" alt="Team" class="social-icon-1">
+                    </a>
+                    <a href="https://www.instagram.com/Nee_nnick" target="_blank">
+                        <img src="assets/images/Logos/InstaLogo.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/yannick-garbe-67986033a/" target="_blank">
+                        <img src="assets/images/Logos/linkedInLogo.png" alt="Linkin" class="social-icon">
+                    </a>
+                    <a href="https://github.com/Neennick02" target="_blank">
+                        <img src="assets/images/Logos/github-mark-white.png" alt="github" class="social-icon">
+                    </a>
+                </div>
+            </section>
+        </main>
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                if (link.getAttribute('href').startsWith('#')) return; // skip anchors
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // prevent default navigation
+                    const url = this.href;
+
+                    const container = document.getElementById('page-container');
+
+                    // Add exit animation
+                    container.classList.add('page-exit-active');
+
+                    container.addEventListener('transitionend', () => {
+                        window.location = url; // navigate after animation
+                    }, { once: true });
+                });
+            });
+        </script>
+
+        <script>
+            const projectGrid = document.getElementById("projectGrid");
+
+            const projects = [
+                                {
+                    title: "Search Of Sanity",
+                    link: "SOS.html",
+                    image: "assets/images/Games/Sos/MainTitle.png",
+                    role: "Gameplay Programmer, Scrum Master",
+                    time: "8 weeks",
+                    team: "6 people",
+                    engine: "Unity (C#)",
+                    description: "",
+                    tags: ["Unity", "WEBGL", "C#", "PC"]
+                },
+                {
+                    title: "Dungeon Danger",
+                    link: "dungeonDanger.html",
+                    image: "assets/images/Games/DungeonDanger/DungeonDangerCover.png",
+                    role: "Gameplay Programmer, Map Designer",
+                    time: "10 weeks",
+                    team: "1 person",
+                    engine: "Unity (C#)",
+                    description: "Inspired by classic 3D zelda games, this action adventure game lets the player explore a dungeon with enemies, puzzles, secrets and a final boss fight.",
+                    tags: ["Unity", "C#", "PC"]
+                },
+                                {
+                    title: "Medieval Cards Showdown",
+                    link: "MedievalCardShowdown.html",
+                    image: "assets/images/Games/TurnBasedCards/gameplay.jpg",
+                    role: "Gameplay Programmer, Designer",
+                    time: "3 weeks",
+                    team: "1 person",
+                    engine: "Unity (C#)",
+                    description: "A turn based card game with 21 different cards and 3 different opponents. ",
+                    tags: ["Unity", "C#"]
+                },
+                {
+                    title: "DimensionDash",
+                    link: "dimensionDashPage.html",
+                    image: "assets/images/Games/DimensionDash/World3.png",
+                    role: "Gameplay Programmer, Scrum Master",
+                    time: "3 weeks",
+                    team: "6 people",
+                    engine: "Unity (C#)",
+                    description: "A chaotic local multiplayer runner where players race through the streets, using MarioKart style items to sabotage each other in fast-paced mayhem.",
+                    tags: ["Unity", "C#", "WEBGL"]
+                },
+                {
+                    title: "FPS Shooter",
+                    link: "FPSshooter.html",
+                    image: "assets/images/Games/FPSshooter/pistol.png",
+                    role: "Gameplay Programmer / Designer",
+                    time: "3 weeks",
+                    team: "1 person",
+                    engine: "Unity (C#)",
+                    description: "A programming playground made in my free time to mess around with FPS mechanics, more detailed enemy AI and ragdoll physics. ",
+                    tags: ["Unity", "C#", "PC"]
+                },
+                {
+                    title: "Splunge",
+                    link: "splungePage.html",
+                    image: "assets/images/Games/Splunge/splungeTumbail.png",
+                    role: "Gameplay Programmer",
+                    time: "6 weeks",
+                    team: "4 people",
+                    engine: "Unity (C#)",
+                    description: "A fast-paced 2D bullet hell where dashing into enemies and devouring food makes you grow. The bigger you get, bigger the world becomes I worked on enemy bullet behaviour and spawn, grow mechanics.",
+                    tags: ["Unity", "C#", "PC"]
+                }, {
+                    title: "Overkill Protocol",
+                    link: "overkillProtocolPage.html",
+                    image: "assets/images/Games/Overkill protocol/OverkillProtocolTumbnail.png",
+                    role: "Gameplay Programmer, Scrum Master",
+                    time: "3 weeks",
+                    team: "6 people",
+                    engine: "Unity (C#)",
+                    description: "Overkill Protocol is a chaotic twin-stick shooter where you battle infected machines aboard a spaceship. Navigate doors, collect items, and survive waves of enemiesina single intense level.I worked on the player movement, health, pickups and a miniMap.",
+                    tags: ["Unity", "C#", "PC"]
+                }, {
+                    title: "Iron Skies",
+                    link: "IronSkiesPage.html",
+                    image: "assets/images/Games/Iron Skies/IronSkiesTumbnail.png",
+                    role: "Gameplay Programmer",
+                    time: "4 weeks",
+                    team: "7 people",
+                    engine: "Unity (C#)",
+                    description: "Iron Skies is an action-packed shoot ’em up featuring diverse enemy types and a simple but satisfying upgrade system. I worked on this project as a solo developer and 4 game artists.",
+                    tags: ["Unity", "C#", "PC", "WEBGL"]
+                }, {
+                    title: "Asteroids Storm",
+                    link: "asteroidsPage.html",
+                    image: "assets/images/Games/Asteroids/AbteroidsTumbnail.png",
+                    role: "Gameplay Programmer",
+                    time: "3 weeks",
+                    team: "1 person",
+                    engine: "Unity (C#)",
+                    description: "A modern take on the 1979 classic Asteroids, featuring a basic clone enhanced with fun power-ups and endless waves of enemies.",
+                    tags: ["Unity", "C#", "PC", "WEBGL"]
+                }, {                   
+                    title: "Digital Pet",
+                    link: "DigitalPet.html",
+                    image: "assets/images/Games/DigitalPet/Tumbnail.png",
+                    role: "Gameplay Programmer",
+                    time: "2 weeks",
+                    team: "1 person",
+                    engine: "P5.js",
+                    description: "A tamagotchi inspired digital pet that saves your progress. Play a minigame a buy collectables to keep your character happy. ",
+                    tags: ["P5.js", "JavaScript / P5.js Librairy", "WEBGL"]
+                }
+            ];
+
+            projects.forEach(project => {
+                const card = document.createElement("a");
+                card.className = "project-card";
+                card.href = project.link;
+card.innerHTML = `
+<img src="${project.image}" />
+
+<div class="project-meta">
+    <div class="meta-item">
+        <img src="assets/images/Symbols/clock.svg" class="meta-icon">
+        <span>${project.time}</span>
+    </div>
+
+    <div class="meta-item">
+        <img src="assets/images/Symbols/team.svg" class="meta-icon">
+        <span>${project.team}</span>
+    </div>
+
+    <div class="meta-item">
+        <img src="assets/images/Symbols/tools.svg" class="meta-icon">
+        <span>${project.engine}</span>
+    </div>
+</div>
+               
+
+    <div class="project-info">
+        <h3>${project.title}</h3>
+        <p>${project.role}</p>
+        <hr>
+        <p>${project.description}</p>
+
+        <div class="project-tags">
+            ${project.tags.map(t => `<span>${t}</span>`).join("")}
+        </div>
+    </div>
+  `;
+
+                projectGrid.appendChild(card);
+            });
+            ;
+        </script>
+    </div>
 </body>
-
 
 </html>
